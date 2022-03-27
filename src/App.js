@@ -4,20 +4,19 @@ import "./App.css"
 import Home from "./pages/Home"
 import List from "./pages/List"
 
-class App extends React.Component {
-  render() {
-    const App = () => (
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/list" element={<List />} />
-        </Routes>
-      </div>
-    )
-    return (
-        <App />
-    )
-  }
+function App () {
+  const App = () => (
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/list" element={<List />} />
+      </Routes>
+    </div>
+  )
+  return (
+      <App />
+  )
 }
+
 
 export default App
