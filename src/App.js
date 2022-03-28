@@ -1,22 +1,19 @@
-import React from "react"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import "./App.css"
-import Home from "./pages/Home"
-import List from "./pages/List"
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home";
+import Movements from "./pages/Movements";
 
-function App () {
+function App() {
   const App = () => (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/list" element={<List />} />
+        <Route path="/movements" element={<Movements />} />
       </Routes>
     </div>
-  )
-  return (
-      <App />
-  )
+  );
+  return <App />;
 }
 
-
-export default App
+export default App;
