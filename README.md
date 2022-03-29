@@ -2,9 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+To start, install the dependencies with:
+`npm install`
+
 ## Available Scripts
 
-First you should follow the instructions in the back-end side: https://github.com/ezequielmgonzalez/server-budget
+First you should follow the instructions in the back-end side: https://github.com/ezequielmgonzalez/server-budget \
 Then, in the project directory, you can run:
 
 ### `npm start`
