@@ -7,7 +7,7 @@ To start, install the dependencies with:
 
 ## Available Scripts
 
-First you should follow the instructions in the back-end side: https://github.com/ezequielmgonzalez/server-budget
+First you should follow the instructions in the back-end side: https://github.com/ezequielmgonzalez/server-budget \
 Then, in the project directory, you can run:
 
 ### `npm start`
