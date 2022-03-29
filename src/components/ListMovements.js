@@ -1,6 +1,7 @@
 import React from "react";
 import { Table, Button } from "react-bootstrap";
 import EditMovement from "./EditMovement";
+import { FaTrashAlt } from "react-icons/fa";
 
 const ListMovements = () => {
   const [list, setList] = React.useState([]);
@@ -38,7 +39,7 @@ const ListMovements = () => {
   return (
     <React.Fragment>
       {" "}
-      <Table striped bordered hover>
+      <Table borderless hover responsive="md">
         <thead>
           <tr>
             <th>Amount</th>
@@ -52,7 +53,9 @@ const ListMovements = () => {
         <tbody>
           {list.map((list) => (
             <tr key={list.movement_id}>
-              <td>${list.amount}</td>
+              <td className={list.typem === "O" ? "negative" : "positive"}>
+                {list.typem === "O" ? "-" : ""}${list.amount}
+              </td>
               <td>{list.concept}</td>
               <td>{list.datem.substring(0, 10)}</td>
               <td>{list.typem === "O" ? "Outcome" : "Income"}</td>
@@ -64,7 +67,7 @@ const ListMovements = () => {
                   variant="danger"
                   onClick={() => deleteMovement(list.movement_id)}
                 >
-                  Delete
+                  <FaTrashAlt /> Delete
                 </Button>
               </td>
             </tr>

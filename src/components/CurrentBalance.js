@@ -20,7 +20,10 @@ function CurrentBalance() {
 
   return (
     <div>
-      <h2>{balance <= 0 ? `-$${Math.abs(balance)}` : `$${balance}`}</h2>
+      <h2 className="smallText mb-0">Current Balance: </h2>
+      <h2 className={`mt-0 balance ${balance <= 0 ? "negative" : "positive"}`}>
+        {balance <= 0 ? `-$${Math.abs(balance)}` : `$${balance}`}
+      </h2>
     </div>
   );
 }

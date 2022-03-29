@@ -1,12 +1,18 @@
 import React from "react";
 import { Modal, Button, Form, InputGroup, FormControl } from "react-bootstrap";
+import { FaPlusCircle, FaEdit } from "react-icons/fa";
 
 function ModalMovement({
   btnLabel,
   title,
   onSubmitForm,
   disableMovementType,
-  list = { amount: 0, concept: "", typem: "I", datem: "" },
+  list = {
+    amount: 0,
+    concept: "",
+    typem: "I",
+    datem: new Date().toISOString(),
+  },
 }) {
   const [show, setShow] = React.useState(false);
 
@@ -20,8 +26,20 @@ function ModalMovement({
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        {btnLabel}
+      <Button
+        className="mb-3"
+        variant={btnLabel === "+" ? "primary" : "secondary"}
+        onClick={handleShow}
+      >
+        {btnLabel === "+" ? (
+          <>
+            <FaPlusCircle /> New{" "}
+          </>
+        ) : (
+          <>
+            <FaEdit /> {btnLabel}
+          </>
+        )}
       </Button>
 
       <Modal show={show} onHide={handleClose}>

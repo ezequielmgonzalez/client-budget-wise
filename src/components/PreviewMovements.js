@@ -23,7 +23,8 @@ const PreviewMovements = () => {
   return (
     <React.Fragment>
       {" "}
-      <Table striped bordered hover>
+      <h3 className="smallText">Last Movements:</h3>
+      <Table borderless hover>
         <thead>
           <tr>
             <th>Amount</th>
@@ -35,7 +36,9 @@ const PreviewMovements = () => {
         <tbody>
           {list.map((list) => (
             <tr key={list.movement_id}>
-              <td>${list.amount}</td>
+              <td className={list.typem === "O" ? "negative" : "positive"}>
+                {list.typem === "O" ? "-" : ""}${list.amount}
+              </td>
               <td>{list.concept}</td>
               <td>{list.datem.substring(0, 10)}</td>
               <td>{list.typem === "O" ? "Outcome" : "Income"}</td>

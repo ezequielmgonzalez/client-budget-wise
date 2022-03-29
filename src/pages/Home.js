@@ -8,13 +8,9 @@ function Home() {
   return (
     <Container>
       <div className="App">
-        <h1>BudgetWise Home</h1>
+        <h1>Home</h1>
         <CurrentBalance />
         <PreviewMovements />
-        {/* Link to Movements.js */}
-        <Link to={"./movements"}>
-          <button variant="raised">Movements</button>
-        </Link>
       </div>
     </Container>
   );
