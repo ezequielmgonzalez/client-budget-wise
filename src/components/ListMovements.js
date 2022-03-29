@@ -3,9 +3,11 @@ import { Table, Button, Form } from "react-bootstrap";
 import EditMovement from "./EditMovement";
 import { FaTrashAlt } from "react-icons/fa";
 
+// Creates a table with the requested movements (either all or filtered)
 const ListMovements = () => {
   const [list, setList] = React.useState([]);
 
+  // Get a list of all movements
   const getMovements = async () => {
     try {
       const response = await fetch("http://localhost:5000/movements");
@@ -17,6 +19,7 @@ const ListMovements = () => {
     }
   };
 
+  // Get a list with only movements of requested type
   const getMovementsByType = async (t) => {
     try {
       console.log("lleguee");
@@ -29,6 +32,7 @@ const ListMovements = () => {
     }
   };
 
+  // Deletes the selected movement
   const deleteMovement = async (id) => {
     try {
       const deleteMovement = await fetch(

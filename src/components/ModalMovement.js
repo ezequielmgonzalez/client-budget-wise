@@ -2,6 +2,7 @@ import React from "react";
 import { Modal, Button, Form, InputGroup, FormControl } from "react-bootstrap";
 import { FaPlusCircle, FaEdit } from "react-icons/fa";
 
+// Modal with a form that will render depending on the props.
 function ModalMovement({
   btnLabel,
   title,

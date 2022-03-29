@@ -1,6 +1,7 @@
 import React from "react";
 import ModalMovement from "./ModalMovement";
 
+// Allows you to create new transactions that will be added to the list and will impact the current balance.
 const InputMovement = () => {
   const onSubmitForm = async (e, movement) => {
     // Handle the form submitted

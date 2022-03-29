@@ -10,7 +10,6 @@ function Movements() {
       <div className="App">
         <h1>Movements</h1>
         <InputMovement />
-        {/* <ModalInput /> */}
         <ListMovements />
       </div>
     </Container>

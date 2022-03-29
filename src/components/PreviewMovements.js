@@ -1,9 +1,11 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 
+// Component that displays a list of the last 10 movements (no editing, adding or deleting allowed).
 const PreviewMovements = () => {
   const [list, setList] = React.useState([]);
 
+  // Get the list of the last 10 movements by a back-end query
   const getMovementsPreview = async () => {
     try {
       const response = await fetch("http://localhost:5000/movements/last/10");
