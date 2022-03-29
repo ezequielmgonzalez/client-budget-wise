@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Form } from "react-bootstrap";
 import EditMovement from "./EditMovement";
 import { FaTrashAlt } from "react-icons/fa";
 
@@ -14,6 +14,18 @@ const ListMovements = () => {
       console.log(jsonData);
     } catch (e) {
       console.error(e.message);
+    }
+  };
+
+  const getMovementsByType = async (t) => {
+    try {
+      console.log("lleguee");
+      const response = await fetch(`http://localhost:5000/movements/type/${t}`);
+      const jsonData = await response.json();
+      console.log(jsonData);
+      setList(jsonData);
+    } catch (e) {
+      console.error(e);
     }
   };
 
@@ -38,7 +50,19 @@ const ListMovements = () => {
 
   return (
     <React.Fragment>
-      {" "}
+      <Form.Select
+        className="justify-content-end"
+        aria-label="Default select example"
+        onChange={(e) => {
+          e.target.value !== "none"
+            ? getMovementsByType(e.target.value)
+            : getMovements();
+        }}
+      >
+        <option value="none">Choose a type...</option>
+        <option value="I">Incomes</option>
+        <option value="O">Outcomes</option>
+      </Form.Select>{" "}
       <Table borderless hover responsive="md">
         <thead>
           <tr>
