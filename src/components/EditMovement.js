@@ -1,6 +1,7 @@
 import React from "react";
 import ModalMovement from "./ModalMovement";
 
+// Component that gives the possibility to edit movements (represented as a button that opens a modal with its corresponding form).
 function EditMovement({ list }) {
   const onSubmitForm = async (e, movement) => {
     // Handle the form submitted
