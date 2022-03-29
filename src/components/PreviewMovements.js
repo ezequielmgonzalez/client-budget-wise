@@ -10,7 +10,6 @@ const PreviewMovements = () => {
     try {
       const response = await fetch("http://localhost:5000/movements/last/10");
       const jsonData = await response.json();
-      console.log(jsonData);
       setList(jsonData);
     } catch (e) {
       console.error(e.message);
@@ -25,7 +24,7 @@ const PreviewMovements = () => {
   return (
     <React.Fragment>
       {" "}
-      <h3 className="smallText">Last Movements:</h3>
+      <h3 className="smallText">Last Movements</h3>
       <Table borderless hover>
         <thead>
           <tr>

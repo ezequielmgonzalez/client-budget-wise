@@ -9,7 +9,6 @@ function CurrentBalance() {
       const response = await fetch("http://localhost:5000/movements/balance");
       const jsonData = await response.json();
       setBalance(jsonData);
-      console.log(jsonData);
     } catch (e) {
       console.error(e.message);
     }
@@ -22,7 +21,7 @@ function CurrentBalance() {
 
   return (
     <div>
-      <h2 className="smallText mb-0">Current Balance: </h2>
+      <h2 className="smallText mb-0">Current Balance</h2>
       <h2 className={`mt-0 balance ${balance <= 0 ? "negative" : "positive"}`}>
         {balance <= 0 ? `-$${Math.abs(balance)}` : `$${balance}`}
       </h2>

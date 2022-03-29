@@ -1,10 +1,6 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 
-const activeStyle = {
-  color: "rgb(187, 46, 31)",
-};
-
 // Nav that allows you to navigate between Home and Movements
 function LittleNav() {
   return (

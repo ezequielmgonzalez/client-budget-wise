@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import InputMovement from "../components/InputMovement";
 import ListMovements from "../components/ListMovements";
-import { Button, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 function Movements() {
   return (

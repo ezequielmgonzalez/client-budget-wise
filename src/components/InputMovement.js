@@ -10,7 +10,7 @@ const InputMovement = () => {
     e.preventDefault();
     try {
       // const body = { amount, concept, typeM, dateM };
-      const response = await fetch("http://localhost:5000/movements", {
+      await fetch("http://localhost:5000/movements", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(movement),

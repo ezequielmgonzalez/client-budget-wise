@@ -13,7 +13,6 @@ const ListMovements = () => {
       const response = await fetch("http://localhost:5000/movements");
       const jsonData = await response.json();
       setList(jsonData);
-      console.log(jsonData);
     } catch (e) {
       console.error(e.message);
     }
@@ -22,10 +21,8 @@ const ListMovements = () => {
   // Get a list with only movements of requested type
   const getMovementsByType = async (t) => {
     try {
-      console.log("lleguee");
       const response = await fetch(`http://localhost:5000/movements/type/${t}`);
       const jsonData = await response.json();
-      console.log(jsonData);
       setList(jsonData);
     } catch (e) {
       console.error(e);
@@ -35,12 +32,9 @@ const ListMovements = () => {
   // Deletes the selected movement
   const deleteMovement = async (id) => {
     try {
-      const deleteMovement = await fetch(
-        `http://localhost:5000/movements/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      await fetch(`http://localhost:5000/movements/${id}`, {
+        method: "DELETE",
+      });
       setList(list.filter((list) => list.movement_id !== id));
     } catch (e) {
       console.error(e.message);

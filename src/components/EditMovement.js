@@ -9,15 +9,11 @@ function EditMovement({ list }) {
     // Prevent from refresh
     e.preventDefault();
     try {
-      // const body = { amount, concept, typeM, dateM };
-      const response = await fetch(
-        `http://localhost:5000/movements/${list.movement_id}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(movement),
-        }
-      );
+      await fetch(`http://localhost:5000/movements/${list.movement_id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(movement),
+      });
       //  Once the response has been sent, itś going to refresh and show the changes
       window.location = "/";
     } catch (err) {
