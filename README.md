@@ -5,6 +5,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 To start, install the dependencies with:
 `npm install`
 
+## Backend
+
+The repo for the backend on:
+
+https://github.com/ezequielmgonzalez/server-budget 
+
 ## Available Scripts
 
 First you should follow the instructions in the back-end side: https://github.com/ezequielmgonzalez/server-budget \
