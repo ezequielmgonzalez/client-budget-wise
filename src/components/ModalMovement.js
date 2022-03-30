@@ -56,6 +56,7 @@ function ModalMovement({
               <InputGroup.Text>$</InputGroup.Text>
               <FormControl
                 value={amount}
+                type="number"
                 onChange={(e) => setAmount(e.target.value)}
                 aria-label="Amount (to the nearest dollar)"
               />
